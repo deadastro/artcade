@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Bootstrap 4 template.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+   
+    <div id="countdown"></div>
+    <div id="results"></div>
+    <div id="battle-body" style="width: 100% !important">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 main-div" style="text-align: center">
+                <div id="counter"></div>
+                <div class="artyom"></div>
+                <button class="btn btn-red lean-class" id="jump">JUMP</button>
+            </div>
+            <div class="col-md-6 main-div-2" style="text-align: center">
+                <div id="counter-p"></div>
+                <div class="lean"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <audio id="my_audio" src="public/img/volt.mp3" loop="loop"></audio>
+
+
+    <script src="public/js/jquery-3.3.1.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+        <script>window.onload = function() {
+    document.getElementById("my_audio").play();
+}</script>
+    <script src="public/js/main.js"></script>
+</body>
+
+</html>

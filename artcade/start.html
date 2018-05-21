@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Bootstrap 4 template.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-center">
+                <div class="artyom"></div>
+                <h1 class="starter">за артема</h1>
+                <button class="btn btn-red" id="artyom-start">ВЫБРАТЬ</button>
+            </div>
+            <div class="col-md-6 align-center">
+                <div class="lean"></div>
+                <h1 class="starter">против артема</h1>
+                <button class="btn btn-red" id="pnx">ВЫБРАТЬ</button>
+            </div>
+        </div>
+    </div>
+    <audio id="my_audio_start" src="public/img/select.mp3" loop="loop"></audio>
+
+    <script src="public/js/jquery-3.3.1.min.js"></script>
+                <script>window.onload = function() {
+    document.getElementById("my_audio_start").play();
+}</script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/main.js"></script>
+</body>
+
+</html>

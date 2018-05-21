@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&subset=cyrillic,cyrillic-ext');
+
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+header {
+    background-image: url(../img/fire-gif-transparent.gif), url(https://pp.userapi.com/c846216/v846216020/15502/CjNz8e9jbNs.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover, cover;
+    background-position: 25% 55%;
+}
+
+#battle-body {
+        background-image: url(../img/fire-gif-transparent.gif);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover, cover;
+    background-position: 25% 55%;
+}
+
+
+/* CONTAINERS */
+
+.align-center {
+    text-align: center;
+}
+
+/* TEXT */
+
+h1 {
+    color: white;
+}
+
+h1:hover {
+    transform: rotate(360deg);
+    transition: .5s;
+    cursor: pointer;
+}
+
+/* BUTTON */
+
+.btn-red {
+    padding: 20px 40px;
+    background-color: firebrick;
+    color: white;
+    transition: .3s ease;
+}
+
+.btn-red:hover {
+    background-color: white;
+    color: firebrick;
+}
+
+.rotation {
+    -webkit-animation: rotation 5s infinite;
+    /* Safari 4+ */
+    -moz-animation: rotation 5s infinite;
+    /* Fx 5+ */
+    -o-animation: rotation 5s infinite;
+    /* Opera 12+ */
+    animation: rotation 5s infinite;
+    /* IE 10+, Fx 29+ */
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    50% {
+        transform: scale(10);
+    }
+
+    100% {
+        transform: rotate(254deg);
+    }
+}
+
+.rotation2 {
+    -webkit-animation: rotation 2s infinite;
+    /* Safari 4+ */
+    -moz-animation: rotation 2s infinite;
+    /* Fx 5+ */
+    -o-animation: rotation 2s infinite;
+    /* Opera 12+ */
+    animation: rotation 2s infinite;
+    /* IE 10+, Fx 29+ */
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    50% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.heading {
+    margin: 0 0 60px 0;
+    -webkit-animation: color 5s infinite;
+    /* Safari 4+ */
+    -moz-animation: color 5s infinite;
+    /* Fx 5+ */
+    -o-animation: color 5s infinite;
+    /* Opera 12+ */
+    animation: color 5s infinite;
+    /* IE 10+, Fx 29+ */
+}
+
+@keyframes color {
+    0% {
+        color: aqua;
+    }
+
+    50% {
+        color: red
+    }
+
+    100% {
+        color: darkgreen;
+    }
+}
+
+/* ARTYOM */
+
+.artyom {
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+    background-image: url(../img/a-1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.lean {
+    min-height: 500px;
+    position: relative;
+    background-image: url(../img/lean.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 400px;
+    height: 400px;
+}
+
+.top {
+    width: 260px;
+    height: 300px;
+    position: absolute;
+    left: 50px;
+}
+
+.foot-top {
+    width: 90px;
+    height: 50px;
+    position: absolute;
+    top: 280px;
+    left: 150px;
+}
+
+.starter {
+    color: black;
+}
+
+.animation {
+    animation: artyom .2s infinite;
+}
+
+@keyframes artyom {
+    0% {
+        background-image: url(../img/a-1.png)
+    }
+
+    25% {
+        background-image: url(../img/a-2.png)
+    }
+    50% {
+        background-image: url(../img/a-3.png)
+    }
+
+    100% {
+        background-image: url(../img/a-1.png)
+    }
+}
+
+#countdown {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.55);
+    width: 100%;
+    height: 100%;
+    z-index: 9999 !important;
+}
+
+
+#countdown > p {
+    font-size: 98px;
+    color: firebrick;
+}
+
+/* BATTLE */
+
+#jump {
+    margin: 0 auto;
+    bottom: 20px;
+}
+
+.animation2 {
+    animation: artyom .2s linear forwards;
+}
+
+#counter > p {
+    font-size: 38px;
+    color: firebrick;
+}
+
+#counter-p > p {
+    font-size: 38px;
+    color: firebrick;
+}
+
+#results {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20%;
+}
+
+.mega-p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
