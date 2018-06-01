@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>THE ARTCADE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="public/img/favicon.png" />
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        .player {
+            width: 200px;
+            height: 300px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: contain;
+        }
+    </style>
+    
+    <div class="level-popup">
+        <h1 id="level" style="margin-top: 200px; width: 100%; text-align: center; color: white"><i class="fas fa-trophy"></i>Level <span>0</span></h1>
+    </div>
+    <div class="level-popup-shade"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Training room</h1>
+                <div id="game">
+                    <div id="player" class="player"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h1 id="score">Score: 0</h1>
+                </div>
+                <div id="level">
+                    <h1>Level: <span>0</span></h1>
+                </div>
+                <div id="hp-div">
+                    <h1 style="display: inline-block">HP:</h1>
+                    <span id="hp"></span>
+                </div>
+                <div id="speed-div">
+                    <h1 style="display: inline-block">Speed:</h1>
+                    <span id="speed"></span>
+                </div>
+                <div id="ko">
+                    <h1 style="display: inline-block">K.O.:</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="public/js/jquery-3.3.1.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/main.js"></script>
+</body>
+
+</html>
