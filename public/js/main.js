@@ -1,10 +1,14 @@
 class Player {
     
     constructor() {
-        this.framesPerSecond = 15;
+        this.framesPerSecond = 30;
         this.frames = [
             'a-1.png',
             'a-2.png',
+            'a-3.png',
+            'a-4.png',
+            'a-5.png',
+            'a-4.png',
             'a-3.png',
             'a-2.png',
             'a-1.png',
