@@ -57,7 +57,6 @@ $(function() {
     });
     
     $(document).on('keyup', (e) => {
-        console.log(e.which);
         if (e.which === 32) {
             artyom.jump();
         }
