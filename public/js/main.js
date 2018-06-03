@@ -55,16 +55,14 @@ $(function() {
         type: 'artyom',
         object: $('#player2')
     });
-    
+
     $(document).on('keyup', (e) => {
-        console.log(e.which);
         if (e.which === 32) {
             artyom.jump();
         }
+      
         if (e.which === 38) {
             ded.jump();
         }
     });
 });
-
-
