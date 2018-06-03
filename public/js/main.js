@@ -1,66 +1,69 @@
 class Player {
     
-    constructor() {
-        this.framesPerSecond = 30;
-        this.frames = [
-            'a-1.png',
-            'a-2.png',
-            'a-3.png',
-            'a-4.png',
-            'a-5.png',
-            'a-4.png',
-            'a-3.png',
-            'a-2.png',
-            'a-1.png',
-        ];    
-        
-        this.object = $('#player');
-        this.jumpFrame(0);
+    constructor(params = {}) {
+        this.type = params.type;
+
+        this.framesPerSecond = 20;
+        this.playerObject = params.object.find('.player');
+        this.scoreObject = params.object.find('.score');
+        this.states = [];
+        this.score = 0;
+
+        this.playerObject.css('background-image', `url(public/img/players/${this.type}/idle.png)`);
+        this.scoreObject.text(this.score);
     }
-    
+
     jump() {
-        let i = 1;
-        this.jumpFrame(i);
-        
-        let intervalId = setInterval(() => {
-            i++;
-            this.jumpFrame(i);
-            if (i === this.frames.length - 1) {
-                clearInterval(intervalId);
+        if (this.states.length) {
+            return;
+        }
+
+        for (let i = 2; i <= 5; i++) {
+            this.states.push(() => {
+                this.playerObject.css('background-image', `url(public/img/players/${this.type}/jump/${i}.png)`);
+            });
+        }
+
+        for (let i = 4; i >= 1; i--) {
+            this.states.push(() => {
+                this.playerObject.css('background-image', `url(public/img/players/${this.type}/jump/${i}.png)`);
+            });
+        }
+
+        let renderInterval = setInterval(() => {
+            this.states.splice(0, 1)[0].call(this);
+            if (this.states.length === 0) {
+                clearInterval(renderInterval);
+                this.score = this.score + 1;
+                this.scoreObject.text(this.score);
             }
         }, 1000 / this.framesPerSecond);
     }
-    
-    jumpFrame(frame) {
-        this.object.css('background-image', 'url(public/img/' + this.frames[frame] + ')');
-    }
+
 }
 
+window.Game = {
+};
+
 $(function() {
-    let s = 0,
-        l = 0,
-        artyom = new Player();
+    let artyom = new Player({
+        type: 'artyom',
+        object: $('#player1')
+    });
+
+    let ded = new Player({
+        type: 'artyom',
+        object: $('#player2')
+    });
     
     $(document).on('keyup', (e) => {
+        console.log(e.which);
         if (e.which === 32) {
             artyom.jump();
-            s++;
-            $('#score').html('Score: ' + s);
-            if (s % 10 === 0) {
-                l++;
-                $('.level-popup').addClass('active').find('span').text(l);
-                $('.level-popup-shade').addClass('active');
-                $('#hp').css('width', l*10);
-                $('#speed').css('width', l*10);
-                $('#ko h1').append('<i class="fas fa-bolt"></i>')
-                setTimeout(() => {
-                    $('.level-popup').removeClass('active');
-                    $('.level-popup-shade').removeClass('active');
-                }, 3000);
-                $('#level span').text(l)
-            }
         }
-        
+        if (e.which === 38) {
+            ded.jump();
+        }
     });
 });
 
