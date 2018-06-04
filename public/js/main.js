@@ -99,7 +99,7 @@ $(function() {
                 setTimeout(() => {
                     $('.level-popup').removeClass('active');
                     $('.level-popup-shade').removeClass('active');
-                }, 3000);
+                }, 2000);
                 $('#level span').text(l)
             }
             q = s;
@@ -114,16 +114,6 @@ $(function() {
             $('#score-e').html('Score: ' + v);
             if (v % 10 === 0) {
                 l++;
-                $('.level-popup').addClass('active').find('span').text(l);
-                $('.level-popup-shade').addClass('active');
-                $('#hp').css('width', l*10);
-                $('#speed').css('width', l*10);
-                $('#ko h1').append('<i class="fas fa-bolt"></i>')
-                setTimeout(() => {
-                    $('.level-popup').removeClass('active');
-                    $('.level-popup-shade').removeClass('active');
-                }, 3000);
-                $('#level span').text(l)
             }
             w = v;
         }
